@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection){
         }
     }
 
-    if (player==="paper"){
+    else if (player==="paper"){
         if (comp==="rock") {
             return "You win! Paper covers rock!";
         }
@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection){
         }
     }
 
-    if (player==="scissors"){
+    else if (player==="scissors"){
         if (comp==="rock") {
             return "You lose! Rock breaks scissors!";
         }
@@ -50,6 +50,9 @@ function playRound(playerSelection, computerSelection){
         if (comp==="scissors"){
             return "It's a draw!";
         }
+    }
+    else{
+        return "Please choose between Rock/Paper/Scissors";
     }
 }
 
@@ -66,6 +69,12 @@ function game(){
         }
         else if (result.includes("lose")){
             compScore++;
+        }
+        else if (result.includes("draw")){
+            continue;
+        }
+        else{
+            i-=1;
         }
     }
 
