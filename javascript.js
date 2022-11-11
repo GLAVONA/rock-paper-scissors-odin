@@ -3,13 +3,10 @@ function getComputerChoice(){
 
     switch (rand){
         case 1:
-            console.log("Rock");
             return "Rock";
         case 2:
-            console.log("Paper");
             return "Paper";
         case 3:
-            console.log("Scissors");
             return "Scissors";
     }
 }
@@ -53,6 +50,33 @@ function playRound(playerSelection, computerSelection){
         if (comp==="scissors"){
             return "It's a draw!";
         }
+    }
+}
+
+function game(){
+    let playerScore = 0;
+    let compScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(prompt("Please make your choice:"),getComputerChoice())
+        console.log(result);
+
+        if (result.includes("win")){
+            playerScore++;
+        }
+        else if (result.includes("lose")){
+            compScore++;
+        }
+    }
+
+    if (playerScore>compScore){
+        console.log("Game over! You won!");
+    }
+    else if (playerScore<compScore){
+        console.log("Game over! You lost!");
+    }
+    else {
+        console.log("The game finished in a draw!")
     }
 }
 
