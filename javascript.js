@@ -94,9 +94,6 @@ function playRound(playerSelection, computerSelection){
             
         }
     }
-    else{
-        alert("Please choose between Rock/Paper/Scissors");
-    }
     if (resultDiv.lastChild.innerText.includes("win")){
         playerScore++;
     }
@@ -120,6 +117,6 @@ function playRound(playerSelection, computerSelection){
         roundCount=0;
         newGame=true;
         resetScore();
-    } 
+    }
 
 }
